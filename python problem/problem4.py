@@ -1,3 +1,4 @@
+// this is a sample of modification code using github 
 s = input("Enter string: ")
 n = len(s)
 is_palindrome = True
