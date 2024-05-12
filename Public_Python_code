@@ -1,0 +1,91 @@
+import os
+# Files Read:
+
+path = "path of the file"
+###
+if os.path.exists(path):
+    print("The path is exists")
+else:
+    print("The path is NOT exists!!")
+###
+
+def displayFile(name):
+    nameHandle = open(name, 'r')
+    s = nameHandle.read()
+    nameHandle.close()
+    print(s)
+
+
+name = ("C:/Users/leb/OneDrive/Desktop/hello.txt")
+displayFile(name)
+###
+
+
+def displayFileWithLineNumber(nameFile):
+    nameH = open(nameFile, 'r')
+    i = 1
+    for line in nameH:
+        print("Line", i, ":", line, end='')
+        i += 1
+    nameH.close
+
+
+nameFile = ("C:/Users/leb/OneDrive/Desktop/numbers.txt")
+displayFileWithLineNumber(nameFile)
+###
+# File Write:
+# Delete the old writing and start over.
+
+nFile = "C:/Users/leb/OneDrive/Desktop/hello.txt"
+fileOpen = open(nFile, 'w')
+fileOpen.write("hello ")
+fileOpen.write("nothing \n")
+fileOpen.write("good bye \n")
+fileOpen.close
+###
+# File Append:
+# Start where you left off in the file.
+
+File = "C:/Users/leb/OneDrive/Desktop/hello.txt"
+fileOpen = open(nFile, 'a')
+fileOpen.write("A ")
+fileOpen.write("B \n")
+fileOpen.write("C D")
+fileOpen.close
+###
+# Exceptions:
+
+try:
+    print("test")
+except:
+    print("not good")
+
+#exception in file:
+def readFile(name):
+    try:
+        nameHandle = open(name, 'r')
+        s = nameHandle.read()
+        nameHandle.close()
+        fileFound = True
+    except FileNotFoundError:
+        print("File not Found Error!!")
+        s = ""
+        fileFound = False
+    return(s,fileFound)
+
+name = ("C:/Users/leb/OneDrive/Desktop/NON.txt")
+(s, found) = readFile(name)  
+print(s)
+
+
+#exception (We have ValueError(like a/2) and ZeroDivisionError(like 1/0))
+while True:
+    try:
+        a = int(input("Enter integer a:"))
+        b = int(input("Enter integer b:"))
+        x = a/b
+        break
+    except:
+        print("Bad input!!")
+print(x)
+
